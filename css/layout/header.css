@@ -1,0 +1,113 @@
+header{
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 48px;
+}
+
+header > .home_btn > img{
+    width: 55px;
+    height: 55px;
+}
+
+header > .main_menu{
+    display: flex;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+header > .main_menu > li{
+    padding: 4px 12px;
+    cursor: pointer;
+    /*background-color: black;*/
+}
+header > .main_menu > li > a{
+    text-decoration: none; /*underline 제거*/
+    color: black;
+    font-size: var(--font-headline-md-size);
+    font-weight: 500;
+    line-height: var(--font-body-lg-line-height);
+    letter-spacing: var(--font-body-lg-letter-spacing);
+    padding: 4px 0;
+    /* 마우스 올렸을 시 */
+    &:hover{
+        border-bottom: 2px solid black;
+    }
+}
+/*******************************************************/
+header .sub_menu_container{
+    display: flex;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0 !important;
+    width: 100%;
+    transform: translateY(100%);
+    justify-content: center;
+    padding: 42px;
+    cursor: default;
+}
+header .sub_menu_container > div{
+    width: 200px;
+}
+header .sub_menu_title{
+    display: block;
+    font-size: var(--font-headline-md-size);
+    color: black;
+    margin-bottom: 24px;
+    text-align: center;
+}
+header .sub_menu_title a{
+    font-size: inherit;
+    color: inherit;
+}
+header .sub_menu > li{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+header .sub_menu > li a {
+    text-align: center;
+    font-size: var(--font-body-lg-size);
+    text-decoration: none;
+    color: black;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*******************************************************/
+header > nav > ul{
+    display: flex;
+}
+
+header > nav li{
+    padding: 4px 12px;
+}
+
+header > nav a{
+    text-decoration: none; /*underline 제거*/
+    color: white;
+    font-size: var(--font-headline-md-size);
+    font-weight: var(--font-body-lg-weight);
+    line-height: var(--font-body-lg-line-height);
+    letter-spacing: var(--font-body-lg-letter-spacing);
+    padding: 4px 0;
+}
+header > nav a > i{
+    font-size: inherit;
+}
