@@ -4,6 +4,13 @@
     border: none;
     cursor: pointer;
 }
+
+:root{
+    --index-section-padding-x: 52px;
+    --index-section-padding-y: 88px;
+    --index-content-gap: 32px;
+    --index-card-gap: 16px;
+}
 /* border 가 있는 형태 */
 .arrow_button.border{
     border: 1px solid var(--color-black);
@@ -92,10 +99,60 @@ header > nav a{
 }
 /****************************************************/
 
+main > .hero_section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 main > .hero_section > video{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    transition: opacity 0.2s ease;
+}
+main > .hero_section > video.fade{
+    opacity: 0;
+}
+.hero_section .hero_arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+}
+.hero_section .hero_arrow.prev{
+    left: 32px;
+}
+.hero_section .hero_arrow.next{
+    right: 32px;
+}
+.hero_section .hero_pagination{
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+.hero_section .hero_pagination > button{
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.hero_section .hero_pagination > button.active{
+    background-color: white;
 }
 /************************************************/
 .trending_section > h2{
@@ -103,40 +160,80 @@ main > .hero_section > video{
     font-weight: var(--font-headline-lg-weight);
     line-height: var(--font-headline-lg-line-height);
     letter-spacing: var(--font-headline-lg-letter-spacing);
+    margin-bottom: 24px;
 }
 
+.trending_section{
+    padding: var(--index-section-padding-y) var(--index-section-padding-x);
+}
 .trending_section > div{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--index-content-gap);
 }
 
 .trending_section > div > ul{
     display: flex;
-    margin: 16px 0;
+    flex-wrap: wrap;
+    gap: 12px 24px;
 }
 .trending_section > div > ul > li{
-    margin-right: 16px;
-    border-bottom: 1px solid black;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.trending_section button{
+.trending_section > div > ul > li > button{
+    position: relative;
     font-size: var(--font-body-lg-size);
     font-weight: var(--font-body-lg-weight);
     background: unset;
     border: none;
     cursor: pointer;
 }
+.trending_section > div ul li button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #111;
+    transition: width 0.3s ease;
+}
+.trending_section > div > ul > li > button:hover::after{
+    width: 100%;
+}
+.trending_section > div ul li.active button::after,
+.trending_section > div ul li button.active::after{
+    width: 100%;
+}
+.trending_section .arrow_button_container{
+    display: flex;
+    gap: 8px;
+}
+.trending_section .arrow_button_container > button{
+    font-size: var(--font-body-lg-size);
+    font-weight: var(--font-body-lg-weight);
+    background: unset;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: var(--font-body-lg-size);
+}
 
 
 
 
 .trending_section > ul{
+    display: none;
+    gap: var(--index-card-gap);
+}
+.trending_section > ul.active{
     display: flex;
 }
 .trending_section > ul > li{
-    width: 400px;
-    margin-right: 8px;
+    flex: 1;
+    min-width: 0;
 }
 .trending_section > ul > li > a{
     display: flex;
@@ -167,7 +264,8 @@ main > .hero_section > video{
     display: flex;
     width: 100vw;
     height: 100vh;
-    padding: 100px;
+    gap: var(--index-content-gap);
+    padding: var(--index-section-padding-y) var(--index-section-padding-x);
     background-color: black;
 }
 .edit_section > h2{
@@ -201,21 +299,27 @@ main > .hero_section > video{
     display: flex;
     flex: 1;
    align-items: center;
-    padding: 40px;
+    padding: 0 40px;
 }
 .edit_section > .label_container a{
     font-size: 48px;
     font-weight: 400;
     color: white;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 /************************************************/
+.information1_section{
+    padding: var(--index-section-padding-y) var(--index-section-padding-x);
+}
+.information1_section > h2{
+    margin-bottom: 32px;
+}
 .information1_section > div{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1000px;
-    gap: 24px;
+    grid-template-rows: minmax(640px, 72vh);
+    gap: var(--index-card-gap);
 }
 
 .information1_section a{
@@ -229,7 +333,7 @@ main > .hero_section > video{
     position: absolute;
     bottom: 0;
     color: white;
-    padding: 32px;
+    padding: var(--index-content-gap);
 }
 .information1_section .information > h3{
     font-size: 72px;
@@ -245,42 +349,11 @@ main > .hero_section > video{
     font-size: var(--font-body-lg-size);
 }
 /************************************************/
-.information1_section > div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1000px;
-    gap: 24px;
-}
-.information1_section a{
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.information1_section .information{
-    position: absolute;
-    bottom: 0;
-    color: white;
-    padding: 32px;
-}
-.information1_section .information > h3{
-    font-size: 72px;
-    margin-bottom: 16px;
-}
-.information1_section .information > p{
-    font-size: 32px;
-}
-.information1_section button{
-    position: absolute;
-    right: 32px;
-    bottom: 32px;
-    font-size: var(--font-body-lg-size);
-}
 /***********************************************/
 .information2_section{
     display: flex;
-    height: 480px;
+    min-height: 520px;
+    margin-top: var(--index-section-padding-y);
 }
 .information2_section img.logo{
     width: 60px;
@@ -290,7 +363,7 @@ main > .hero_section > video{
 .information2_section > div:first-child{
     position: relative;
     flex: 3;
-    padding: var(--spacing-margin-desktop);
+    padding: var(--index-section-padding-x);
     background-color: black;
 }
 .information2_section > div:last-child{
@@ -301,7 +374,7 @@ main > .hero_section > video{
 }
 .information2_section a{
     position: absolute;
-    bottom: var(--spacing-margin-desktop);
+    bottom: var(--index-section-padding-x);
     font-size: var(--font-body-lg-size);
 }
 .information2_section a  > button{
@@ -318,13 +391,19 @@ main > .hero_section > video{
 }
 /************************************************/
 .information3_section {
-    padding: 52px;
+    padding: var(--index-section-padding-y) var(--index-section-padding-x);
     background-color: black;
+}
+.information3_section{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px 24px;
 }
 .information3_section > div{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 52px;
+    margin-bottom: var(--index-content-gap);
 }
 .information3_section h2{
     font-size: var(--font-display-lg-size);
@@ -334,12 +413,26 @@ main > .hero_section > video{
     font-size: var(--font-body-lg-size);
     align-self: center;
 }
+.information3_section > button{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.45s ease, transform 0.45s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.information3_section > button.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.information3_section > button.is-visible:hover{
+    background-color: white;
+    color: black;
+}
 
 .information3_section .slide_wrapper{
     overflow: hidden;
 }
 
 .information3_section .slide_container{
+    grid-column: 1 / -1;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -350,9 +443,20 @@ main > .hero_section > video{
     flex-basis: 480px;
     flex-shrink: 0;
     cursor: pointer;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--item-index, 0) * 0.08s);
+}
+.information3_section .slide_container > li.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.information3_section .slide_container > li.is-visible:hover{
+    transform: translateY(-8px);
 }
 .information3_section .slide_container > li:not(:last-child){
-    margin-right: 16px;
+    margin-right: var(--index-card-gap);
 }
 .information3_section .slide_container > li > img{
     width: 100%;
@@ -363,27 +467,40 @@ main > .hero_section > video{
 
 
 /************************************************/
+.paragraph_section{
+    padding: var(--index-section-padding-y) var(--index-section-padding-x);
+}
+.paragraph_section p{
+    max-width: 920px;
+    font-size: var(--font-headline-md-size);
+    line-height: 1.7;
+}
 
 main .image_section1{
     display: flex;
+    gap: var(--index-card-gap);
+    padding: 0 var(--index-section-padding-x) var(--index-section-padding-y);
 }
 main .image_section1 img{
     width: 100%;
 }
 main .image_section1 img:first-child{
-    margin-right: 8px;
+    margin-right: 0;
 }
 /*************************************************/
 footer{
     background-color: black;
     color: white;
+    padding: 56px var(--index-section-padding-x);
 }
 footer > div{
     display: flex;
     justify-content: space-between;
+    gap: var(--index-content-gap);
 }
 footer .site_nav{
     display: flex;
+    gap: 32px;
 }
 footer .site_nav > div{
     width: 220px;
@@ -447,3 +564,74 @@ footer hr{
     text-align: right;
 }
 /******************************************/
+
+@media (max-width: 768px){
+    :root{
+        --index-section-padding-x: 20px;
+        --index-section-padding-y: 56px;
+        --index-content-gap: 24px;
+        --index-card-gap: 12px;
+    }
+
+    .trending_section > div,
+    .information2_section,
+    footer > div{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit_section,
+    .information1_section > div,
+    .information3_section,
+    main .image_section1{
+        display: block;
+    }
+
+    .edit_section{
+        height: auto;
+    }
+
+    .edit_section > h2{
+        position: static;
+        font-size: var(--font-display-lg-mobile-size);
+        margin-bottom: 24px;
+    }
+
+    .edit_section > .image_container,
+    .edit_section > .label_container,
+    .information1_section a,
+    main .image_section1 img{
+        margin-bottom: var(--index-card-gap);
+    }
+
+    .information1_section > div{
+        grid-template-rows: unset;
+    }
+
+    .information1_section a{
+        display: block;
+        min-height: 520px;
+    }
+
+    .information1_section .information > h3,
+    .information3_section h2{
+        font-size: var(--font-display-lg-mobile-size);
+    }
+
+    .information2_section{
+        margin-top: 0;
+    }
+
+    .information2_section > div:first-child,
+    .information2_section > div:last-child{
+        width: 100%;
+    }
+
+    .information3_section > button{
+        margin: 24px 0;
+    }
+
+    footer .site_nav{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .category_list{
+        display: flex;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .category_list button{
+        border: 1px solid #dcdcdc;
+        background: #fff;
+        color: #666;
+        padding: 10px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    /* hover */
+    .category_list button:hover{
+        background: #111;
+        color: #fff;
+        border-color: #111;
+    }
+
+    /* active 상태 */
+    .category_list button.active{
+        background: #111;
+        color: #fff;
+        border-color: #111;
+        font-weight: 700;
+    }
+</style>
+<body>
+<section class="trending_section">
+    <h2>Trending Now</h2>
+
+    <div>
+        <ul class="category_list">
+            <li><button type="button" class="active">마이티셔츠</button></li>
+            <li><button type="button">글리오</button></li>
+            <li><button type="button">경량</button></li>
+            <li><button type="button">페이토</button></li>
+            <li><button type="button">에샤페</button></li>
+            <li><button type="button">하레핀</button></li>
+            <li><button type="button">테니스</button></li>
+        </ul>
+
+        <div class="arrow_button_container">
+            <button type="button" class="arrow_button">
+                <i class="fa-solid fa-caret-left"></i>
+            </button>
+            <button type="button" class="arrow_button">
+                <i class="fa-solid fa-caret-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="#">
+                <div class="image_container">
+                    <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
+                </div>
+                <span class="tag">공용</span>
+                <strong class="title">&lt;우즈 착용&gt; 마이티셔츠 유니 세미오버핏</strong>
+                <strong class="price">49,900원</strong>
+            </a>
+        </li>
+    </ul>
+</section>
+
+</body>
+</html>
+<script>
+    const categoryButtons = document.querySelectorAll('.category_list button');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            // 기존 active 제거
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 클릭한 버튼 active 추가
+            button.classList.add('active');
+        });
+    });
+</script>

@@ -4,6 +4,13 @@
     font-size: inherit;
     padding: 2px 12px;
 }
+
+:root{
+    --detail-section-padding-x: 60px;
+    --detail-section-padding-y: 80px;
+    --detail-content-gap: 32px;
+    --detail-card-gap: 16px;
+}
 /******************************************/
 .accordion{
     border: 1px solid black;
@@ -16,10 +23,19 @@
     cursor: pointer;
     margin-bottom: 12px;
 }
+.accordion > .head i{
+    transition: transform 0.2s ease;
+}
+.accordion.active > .head i{
+    transform: rotate(180deg);
+}
 .accordion > .body{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
+}
+.accordion.active > .body{
+    display: grid;
 }
 
 /******************************************/
@@ -32,10 +48,12 @@
     flex: 1;
     height: 100%;
     background-color: beige;
+    padding: var(--detail-section-padding-x);
 }
 #main > div > img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 #main > div{
     display: flex;
@@ -44,12 +62,12 @@
 }
 /****************************************/
 #main .information{
-    width: 60%;
+    width: min(520px, 100%);
 }
 #main .information .header{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-size: var(--font-label-sm-size);
 }
 #main .information .header .share{
@@ -61,22 +79,22 @@
 
 
 #main .information .title{
-    margin-bottom: 24px;
+    margin-bottom: var(--detail-content-gap);
 }
 /*******************************/
 #main .information .group{
-    margin-bottom: 24px;
+    margin-bottom: var(--detail-content-gap);
 }
 #main .information .group li{
     display: inline-block;
     list-style: none;
     border-bottom: 1.2px solid black;
-    margin-right: 4px;
+    margin-right: 8px;
 }
 /*******************************/
 #main .information .size{
     background-color: white;
-    margin-bottom: 12px;
+    margin-bottom: var(--detail-card-gap);
 }
 #main .information .size > .head{
     font-size: var(--font-label-lg-size);
@@ -88,6 +106,11 @@
     border: 1px solid black;
     padding: 8px 0;
     font-size: var(--font-label-sm-size);
+    cursor: pointer;
+}
+#main .information .size > .body > button.active{
+    background-color: var(--color-primary);
+    color: white;
 }
 /*******************************/
 #main .information .cart{
@@ -111,21 +134,23 @@
 #detail{
     position: relative;
     display: flex;
+    gap: var(--detail-content-gap);
+    padding: var(--detail-section-padding-y) var(--detail-section-padding-x);
 }
 #detail > div{
     flex: 1;
-    padding: 48px;
+    padding: 0;
 }
 /****************************************/
 #detail .image_container{
     position: sticky;
-    top: 0;
+    top: var(--detail-section-padding-y);
     left: 0;
     display: grid;
     width: 100%;
     aspect-ratio: 1 / 1;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: var(--detail-card-gap);
     align-self: flex-start;
 }
 
@@ -137,13 +162,13 @@
 
 /****************************************/
 #detail .information > div:first-child{
-    margin-bottom: 48px;
+    margin-bottom: var(--detail-section-padding-y);
 }
 
 #detail .information .text{
     font-size: var(--font-body-lg-size);
     color: var(--color-on-tertiary-fixed);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 #detail .information span.text{
@@ -158,23 +183,26 @@
 #detail .accordion{
     padding: unset;
     border: none;
-    margin: 8px 0;
+    margin: 0;
 }
 #detail .accordion > .head{
-    padding: 8px 0;
+    padding: 18px 0;
     border-bottom: 1px solid black;
     font-size: var(--font-body-md-size);
 }
 #detail .accordion > .body{
-    display: block;
+    display: none;
     font-size: var(--font-body-md-size);
-    padding: 4px 16px;
+    padding: 20px 16px 28px;
+}
+#detail .accordion.active > .body{
+    display: block;
 }
 #detail .accordion > .body.membership li{
     display: list-item;
     list-style-type: none;
     list-style-position: inside;
-    margin: 16px 0;
+    margin: 12px 0;
     &::before{
         content: "\2713";
         margin-right: 12px;
@@ -184,7 +212,7 @@
 
 #detail .accordion > .product_information > div{
     display: flex;
-    margin: 16px 0;
+    margin: 12px 0;
 }
 #detail .accordion > .product_information span:first-child{
     width: 140px;
@@ -193,15 +221,13 @@
 /***************************************************/
 #detail .accordion .fit_container{
     display: flex;
+    gap: var(--detail-card-gap);
 }
 #detail .accordion .fit_container > div{
     flex: 1;
     height: 100px;
     border: 1px solid black;
     padding: 8px;
-    &:not(:last-child){
-        margin-right: 12px;
-    }
 }
 #detail .accordion .fit_container > div > span{
     display: block;
@@ -217,7 +243,7 @@
 
 #detail .accordion .spec{
     position: relative;
-    margin: 16px 0;
+    margin: 20px 0;
 }
 #detail .accordion .spec > b{
     display: block;
@@ -258,26 +284,39 @@
     color: var(--color-secondary);
 }
 /*******************************************/
+#checkpoint,
+#model_cut{
+    padding: var(--detail-section-padding-y) var(--detail-section-padding-x);
+}
+#checkpoint h2,
+#model_cut h2{
+    margin-bottom: 28px;
+}
+#model_cut p{
+    margin-bottom: var(--detail-content-gap);
+    color: var(--color-secondary);
+}
+#checkpoint > div,
+#model_cut > div{
+    display: flex;
+    gap: var(--detail-card-gap);
+}
 #checkpoint .card{
-    display: inline-block;
-    width: 320px;
-    margin-right: 16px;
+    flex: 1;
+    min-width: 0;
 }
 #checkpoint .card .image_container{
     aspect-ratio: 1 / 1;
+    margin-bottom: 16px;
 }
 #checkpoint .card img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-
-
 #model_cut .card{
-    display: inline-block;
-    width: 320px;
-    margin-right: 16px;
+    flex: 1;
+    min-width: 0;
 }
 #model_cut .card .image_container{
     aspect-ratio: 1 / 1;
@@ -289,11 +328,11 @@
 }
 /***************************/
 #review{
-    padding: 40px 60px;
+    padding: var(--detail-section-padding-y) var(--detail-section-padding-x);
 }
 #review h2{
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 24px;
 }
 #review > button{
     width: 320px;
@@ -302,25 +341,29 @@
     color: white;
     border-radius: 3px;
     font-weight: bold;
+    margin-bottom: var(--detail-content-gap);
 }
 #review .rating{
     display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: var(--detail-section-padding-y);
 
 }
 #review .average_rating{
     text-align: center;
-    padding: 40px;
+    padding: 0;
 }
 #review .average_rating > h3{
     font-size: 48px;
 }
 #review .average_rating > span{
-    margin: 8px 8px;
+    margin: 8px 0;
     display: block;
 }
 #review .total_rating{
-    margin-left: 150px;
-    padding: 45px 0 0 0;
+    margin-left: 0;
+    padding: 0;
 }
 
 #review .total_rating .stars{
@@ -332,20 +375,26 @@
     -webkit-text-stroke: 1px black;
 }
 /*****************************/
+#review .photo_video{
+    margin-bottom: var(--detail-content-gap);
+}
 #review .photo_video > .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 #review .photo_video > .header h3{
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 #review .photo_video > ul{
     display: grid;
-    grid-template-columns: repeat(8, minmax(200px, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: var(--detail-card-gap);
 }
 #review .photo_video > ul > li{
-    margin-right: 10px;
+    margin-right: 0;
 }
 #review .photo_video .image_container{
     position: relative;
@@ -364,8 +413,7 @@
     background: unset;
     border: none;
     cursor: pointer;
-    margin-right: 12px;
-    margin-bottom: 30px;
+    margin: 0;
 }
 #review .photo_video i{
     position: absolute;
@@ -374,9 +422,13 @@
     color: white;
 }
 /***************************************/
+#review .filter{
+    margin-bottom: var(--detail-content-gap);
+}
 #review .filter > div{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 #review .filter .sort_con3tainer > button{
     display: inline-block;
@@ -386,7 +438,7 @@
     border: none;
     cursor: pointer;
     color: gray;
-    margin: 42px 20px 20px 0;
+    margin: 0 20px 0 0;
 }
 #review .filter .search_container > button{
     display: inline-block;
@@ -408,18 +460,21 @@
 #review .filter .search > input{
     border: none;
     background: none;
-    margin-top: 42px;
+    margin-top: 0;
 }
 #review .filter .dropdown > button{
     background: unset;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 /**************************/
 #review .reviews .item{
     display: flex;
+    gap: var(--detail-content-gap);
+    padding-top: var(--detail-content-gap);
+    border-top: 1px solid var(--color-outline-variant);
 }
 #review .reviews .item .contents{
     flex: 1;
@@ -430,7 +485,7 @@
 #review .reviews .item .contents .user{
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 #review .reviews .item .contents .user_icon{
     display: inline-block;
@@ -460,6 +515,7 @@
 }
 #review .reviews .item .images{
     display: flex;
+    gap: 8px;
 }
 #review .reviews .item .images > .image_button{
     width: 100px;
@@ -470,7 +526,12 @@
     height: 100%;
     object-fit: cover;
 }
-
+#review .reviews .singo > button{
+    background: white;
+    border-radius: 5px;
+    margin-top: 8px;
+    padding: 5px;
+}
 
 
 @keyframes progressbar {
@@ -487,6 +548,80 @@
         #detail .accordion .spec:nth-child(3) .child{
             transform: translateX(-66%);
         }
+    }
+}
+
+@media (max-width: 768px){
+    :root{
+        --detail-section-padding-x: 20px;
+        --detail-section-padding-y: 56px;
+        --detail-content-gap: 24px;
+        --detail-card-gap: 12px;
+    }
+
+    #main,
+    #detail,
+    #review .rating,
+    #review .reviews .item{
+        display: block;
+    }
+
+    #main{
+        height: auto;
+    }
+
+    #main > div{
+        min-height: auto;
+    }
+
+    #main > div:first-child{
+        padding-bottom: 0;
+    }
+
+    #main > div > img{
+        aspect-ratio: 1 / 1;
+    }
+
+    #detail .image_container{
+        position: static;
+        margin-bottom: var(--detail-content-gap);
+    }
+
+    #detail .accordion .fit_container,
+    #checkpoint > div,
+    #model_cut > div{
+        display: block;
+    }
+
+    #detail .accordion .fit_container > div,
+    #checkpoint .card,
+    #model_cut .card{
+        margin-bottom: var(--detail-card-gap);
+    }
+
+    #review .rating{
+        margin-bottom: var(--detail-section-padding-y);
+    }
+
+    #review .total_rating{
+        margin-top: var(--detail-content-gap);
+    }
+
+    #review .photo_video > ul{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #review .filter > div{
+        display: block;
+    }
+
+    #review .filter .search_container,
+    #review .filter .dropdown{
+        margin-top: 16px;
+    }
+
+    #review .reviews .item .images{
+        margin-top: var(--detail-content-gap);
     }
 }
 
