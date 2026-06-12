@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>장바구니 | FILA</title>
+    <link rel="stylesheet" href="../../css/public.css">
+
+    <link rel="stylesheet" href="../../css/user/cart.css">
+    <script src="../../JS/user/cart.js" defer></script>
+
+</head>
+<body>
+<main class="cart-panel" aria-label="장바구니">
+    <header class="panel-header">
+        <h1>장바구니</h1>
+        <button class="close" type="button" aria-label="닫기">×</button>
+    </header>
+
+    <section class="tabs" aria-label="배송 유형">
+        <button class="active" type="button">일반배송 <span>1</span></button>
+        <button type="button">오늘도착</button>
+        <button type="button">예약구매</button>
+        <button type="button">커스텀 오더</button>
+    </section>
+
+    <section class="cart-top">
+        <label class="checkline">
+            <input type="checkbox" checked />
+            <span>담긴 상품&nbsp; <strong>1개</strong></span>
+        </label>
+        <div class="text-actions">
+            <button type="button">선택 삭제</button>
+            <button type="button">품절 삭제</button>
+        </div>
+    </section>
+
+    <section class="product">
+        <label class="product-check" aria-label="상품 선택">
+            <input type="checkbox" checked />
+        </label>
+
+        <figure class="product-img">
+            <img
+                    src="https://www.fila.co.kr/cdn/shop/files/01_c86ffe46-c2bd-4751-9134-0983194f3ed4.jpg?v=1770102559&width=533"
+                    alt="에샤페 벨크로 메리제인"
+            />
+        </figure>
+
+        <div class="product-info">
+            <div class="name-row">
+                <h2>에샤페 벨크로 메리제인</h2>
+                <button type="button">옵션변경</button>
+            </div>
+            <p>Grey / Grey / Grey, 220</p>
+            <strong>99,000원</strong>
+        </div>
+
+        <button class="remove" type="button" aria-label="삭제">×</button>
+
+        <div class="qty" aria-label="수량">
+            <button id="minus" type="button" aria-label="수량 감소">−</button>
+            <span id="qty">1</span>
+            <button id="plus" type="button" aria-label="수량 증가">＋</button>
+        </div>
+    </section>
+
+    <section class="totals" aria-label="금액 정보">
+        <dl>
+            <div>
+                <dt>총 상품금액</dt>
+                <dd id="productTotal">99,000원</dd>
+            </div>
+            <div>
+                <dt>상품 할인금액</dt>
+                <dd class="red" id="discountTotal">-0원</dd>
+            </div>
+            <div>
+                <dt>배송비</dt>
+                <dd>0원</dd>
+            </div>
+        </dl>
+        <div class="final-total">
+            <span>총 결제금액</span>
+            <strong id="orderTotal">99,000원</strong>
+        </div>
+    </section>
+
+    <section class="recommend">
+        <h2>같이 담으면 좋은 상품</h2>
+        <div class="recommend-list">
+            <article>
+                <figure class="rec-img">
+                    <img src="../../image/clothes1.webp" alt="벨로 소프트 팬티">
+                </figure>
+                <h3>&lt;우즈 착용&gt; 마이티셔츠 유니 세미오버핏</h3>
+                <p>49,900원</p>
+            </article>
+            <article>
+                <figure class="rec-img">
+                    <img src="../../image/clothes2.webp" alt="러버스 베이직 팬티">
+                </figure>
+                <h3>&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</h3>
+                <p>49,900원</p>
+            </article>
+            <article>
+                <figure class="rec-img">
+                    <img src="../../image/clothes3.webp" alt="벨로 소프트 팬티">
+                </figure>
+                <h3>&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</h3>
+                <p>49,900원</p>
+            </article>
+            <article>
+                <figure class="rec-img">
+                    <img src="../../image/clothes4.webp" alt="벨로 소프트 팬티">
+                </figure>
+                <h3>마이티셔츠 유니 세미오버핏</h3>
+                <p>49,900원</p>
+            </article>
+            <article>
+                <figure class="rec-img">
+                    <img src="../../image/clothes5.webp" alt="리니어 블랙밴드 드로즈 5PACK">
+                </figure>
+                <h3>마이티셔츠 여성 오버핏</h3>
+                <p>49,900원</p>
+
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="checkout-bar">
+    <button type="button" id="checkout">총 1개 상품 결제하기</button>
+</footer>
+
+</body>
+</html>

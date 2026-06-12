@@ -4,7 +4,7 @@
 
 .modal_container{
     top: 0;
-    z-index: 99;
+    z-index: 200;
     position: fixed;
     display: none;
     justify-content: center;
@@ -131,6 +131,110 @@
     font-weight: bold;
     background-color: black;
     color: white;
+}
+
+@media (max-width: 900px){
+    :root{
+        --modal-form-padding: 24px;
+    }
+
+    .modal_container{
+        align-items: flex-end;
+    }
+
+    .modal{
+        width: min(92vw, 720px);
+        height: 88vh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .modal > section{
+        flex: none;
+    }
+
+    .modal .image_section{
+        height: 36%;
+        min-height: 220px;
+    }
+
+    .modal .form_section{
+        flex: 1;
+        min-height: 0;
+    }
+
+    .modal .form_section > form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal .form_section .product_container{
+        flex: 1;
+        height: auto;
+        min-height: 0;
+    }
+
+    .modal .submit_container{
+        position: static;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px){
+    :root{
+        --modal-form-padding: 16px;
+    }
+
+    .modal{
+        width: 100%;
+        height: 94vh;
+    }
+
+    .modal .image_section{
+        height: 30%;
+        min-height: 180px;
+    }
+
+    .modal .form_section .select_container{
+        padding-top: 18px;
+        padding-bottom: 18px;
+        font-size: 16px;
+    }
+
+    .modal .form_section .product_container li{
+        padding: 20px 0;
+    }
+
+    .modal .form_section .product_item label{
+        grid-template-columns: 88px 1fr;
+        grid-column-gap: 12px;
+    }
+
+    .modal .form_section .product_item img{
+        width: 88px;
+        height: 88px;
+        object-fit: cover;
+    }
+
+    .modal .form_section .product_item b{
+        font-size: 15px;
+    }
+
+    .modal .form_section .product_item strong{
+        font-size: 18px;
+    }
+
+    .modal .total_price_container{
+        font-size: 18px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .modal .submit_container > button{
+        padding: 16px;
+        border-radius: 20px;
+        font-size: 17px;
+    }
 }
 
 

@@ -2,15 +2,26 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fila 공식 온라인 스토어</title>
 
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user/cart.css">
+    <link rel="stylesheet" href="css/user/cart_side.css">
+    <link rel="stylesheet" href="css/layout/header.css">
     <link rel="stylesheet" href="layout_popup.css">
 
     <script src="https://kit.fontawesome.com/d19fdaba43.js" crossorigin="anonymous"></script>
     <script src="JS/index.js" defer></script>
-    <script src="JS/layout/popup.js"></script>
+    <script src="JS/user/cart.js" defer></script>
+    <script src="JS/user/cart_side.js" defer></script>
+    <script src="JS/layout/popup.js" defer></script>
+    <script src="JS/layout/header.js" defer></script>
+
 </head>
 <body>
 <div class="coupon_info_container">
@@ -20,13 +31,89 @@
     </button>
 </div>
 
-<header>
+<header style="background-color: white">
     <a class="home_btn" href="#">
-        <img src="image/logo/header-logo.webp" alt="헤더로고">
+        <img src="../../image/logo/header-logo.webp" alt="헤더로고">
     </a>
 
+
     <ul class="main_menu">
-        <li><a href="#">Women</a></li>
+        <li>
+            <a href="#">Women</a>
+            <div class="sub_menu_container">
+                <div>
+                    <b class="sub_menu_title">
+                        <a href="#">의류</a>
+                    </b>
+                    <ul class="sub_menu">
+                        <li>
+                            <a href="/SBS_Fila/html/product/list.html">전체보기</a>
+                            <a href="/">반팔</a>
+                            <a href="#">바람막이/집업</a>
+                            <a href="#">맨투맨/후디</a>
+                            <a href="#">긴팔</a>
+                            <a href="#">쇼츠</a>
+                            <a href="#">팬츠</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <b class="sub_menu_title"><a href="#">신발</a></b>
+                    <ul class="sub_menu">
+                        <li>
+                            <a href="#">전체보기</a>
+                            <a href="#">라이프스타일</a>
+                            <a href="#">테니스</a>
+                            <a href="#">러닝</a>
+                            <a href="#">샌들/슬리퍼</a>
+                            <a href="#">에샤페</a>
+                            <a href="#">리트모</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <b class="sub_menu_title"><a href="#">용품</a></b>
+                    <ul class="sub_menu">
+                        <li>
+                            <a href="#">전체보기</a>
+                            <a href="#">테니스</a>
+                            <a href="#">피클볼</a>
+                            <a href="#">백팩</a>
+                            <a href="#">숄더/토트백</a>
+                            <a href="#">메신저/크로스백</a>
+                            <a href="#">짐백</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <b class="sub_menu_title"><a href="#">언더웨어</a></b>
+                    <ul class="sub_menu">
+                        <li>
+                            <a href="#">전체보기</a>
+                            <a href="#">BEST</a>
+                            <a href="#">컬렉션</a>
+                            <a href="#">쿨웨이브</a>
+                            <a href="#">최화정's 버터소프트</a>
+                            <a href="#">파자마</a>
+                            <a href="#">이지웨어</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <b class="sub_menu_title"><a href="#">스포츠</a></b>
+                    <ul class="sub_menu">
+                        <li>
+                            <a href="#">전체보기</a>
+                            <a href="#">테니스</a>
+                            <a href="#">러닝</a>
+                            <a href="#">트레이닝</a>
+                            <a href="#">피트니스</a>
+                            <a href="#">피클볼</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
         <li><a href="#">Men</a></li>
         <li><a href="#">Kids</a></li>
         <li><a href="#">Tennis</a></li>
@@ -51,7 +138,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="">
                     <i class="fa-solid fa-bag-shopping"></i>
                 </a>
             </li>
@@ -61,7 +148,8 @@
 
 <main>
     <section class="hero_section">
-        <video playsinline="true" autoplay="autoplay" loop="loop" muted="muted" preload="metadata" poster="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"><source src="//www.fila.co.kr/cdn/shop/videos/c/vp/40ed1433d6f740edae9171f7a3066c3a/40ed1433d6f740edae9171f7a3066c3a.HD-1080p-7.2Mbps-83835070.mp4?v=0" type="video/mp4"><img src="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"></video>
+        <video playsinline="true" autoplay="autoplay" muted="muted" preload="metadata" poster="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"><source src="//www.fila.co.kr/cdn/shop/videos/c/vp/40ed1433d6f740edae9171f7a3066c3a/40ed1433d6f740edae9171f7a3066c3a.HD-1080p-7.2Mbps-83835070.mp4?v=0" type="video/mp4"><img src="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"></video>
+        <img class="hero_image" src="" alt="Hero Image" style="display: none; width: 100%; height: 100vh; object-fit: cover; transition: opacity 0.5s ease;">
         <button type="button" class="hero_arrow prev" aria-label="이전 영상">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
@@ -78,11 +166,11 @@
             <ul>
                 <li><button type="button">마이티셔츠</button></li>
                 <li><button type="button">글리오</button></li>
-                <li><button type="button">경량</button></li>
-                <li><button type="button">페이토</button></li>
-                <li><button type="button">에샤페</button></li>
-                <li><button type="button">하레핀</button></li>
+                <li><button type="button">샌들</button></li>
                 <li><button type="button">테니스</button></li>
+                <li><button type="button">쇼츠</button></li>
+                <li><button type="button">에샤페</button></li>
+                <li><button type="button">냉감티셔츠</button></li>
             </ul>
 
             <div class="arrow_button_container">
@@ -151,103 +239,51 @@
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
+                        <img src="image/shoes1.webp" alt="휠라 글리오 실버문">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt;옷이 참 이쁘다</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">라이프 스타일ㅣ여성</span>
+                    <strong class="title">휠라 글리오 실버문</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
+                        <img src="image/shoes2.webp" alt="휠라 글리오 크림">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">라이프 스타일ㅣ여성</span>
+                    <strong class="title">휠라 글리오 크림</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
+                        <img src="image/shoes3.webp" alt="휠라 글리오 핑크">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">라이프 스타일ㅣ여성</span>
+                    <strong class="title">휠라 글리오 핑크</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
+                        <img src="image/shoes4.webp" alt="휠라 글리오 메리제인1">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">공용ㅣ라이프 스타일</span>
+                    <strong class="title">휠라 글리오 메리제인</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
+                        <img src="image/shoes5.webp" alt="휠라 글리오 메리제인2">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt;너무 어렵다 </strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">공용ㅣ라이프 스타일</span>
+                    <strong class="title">휠라 글리오 메리제인</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
         </ul>
@@ -255,103 +291,51 @@
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
+                        <img src="image/sandle1.webp" alt="페이토 샌들v2">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt;집가고 싶다</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">페이토 샌들v2</strong>
+                    <strong class="price">89,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
+                        <img src="image/sandle2.webp" alt="페이토 샌들v2">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">페이토 샌들v2</strong>
+                    <strong class="price">89,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
+                        <img src="image/sandle3.webp" alt="페이토 샌들v2">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">페이토 샌들v2</strong>
+                    <strong class="price">89,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
+                        <img src="image/sandle4.webp" alt="슬릭 웨이비 샌들v3(1)">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">슬릭 웨이비 샌들v3</strong>
+                    <strong class="price">99,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
+                        <img src="image/sandle5.webp" alt="슬릭 웨이비 샌들v3(2)">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt; 밥은 뭐먹지</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
-                    </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">슬릭 웨이비 샌들v3</strong>
+                    <strong class="price">99,000원</strong>
                 </a>
             </li>
         </ul>
@@ -359,51 +343,51 @@
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
+                        <img src="image/tennis1.webp" alt="테니스 크롭 카라 탱크탑">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt; 우즈가 누구냐</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">여성ㅣ테니스</span>
+                    <strong class="title">테니스 크롭 카라 탱크탑</strong>
+                    <strong class="price">79,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
+                        <img src="image/tennis2.webp" alt="테니스 크롭 카라 탱크탑">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">여성ㅣ테니스</span>
+                    <strong class="title">테니스 크롭 카라 탱크탑</strong>
+                    <strong class="price">79,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
+                        <img src="image/tennis3.jpg" alt="테니스 파워넷 게더 스커트">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">여성ㅣ테니스</span>
+                    <strong class="title">테니스 파워넷 게더 스커트</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
+                        <img src="image/tennis4.webp" alt="테니스 파워넷 게더 스커트">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">여성ㅣ테니스</span>
+                    <strong class="title">테니스 파워넷 게더 스커트</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
+                        <img src="image/clothes5.webp" alt="테니스 Coldwave카라티">
                     </div>
-                    <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <span class="tag">남성ㅣ테니스</span>
+                    <strong class="title">테니스 Coldwave카라티</strong>
+                    <strong class="price">109,000원</strong>
                 </a>
             </li>
         </ul>
@@ -411,51 +395,155 @@
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes1.webp" alt="<우즈 착용> 마이티셔츠 유니 세미오버핏">
+                        <img src="image/short1.webp" alt="에브리데이 쇼츠">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;우즈 착용&gt; 한소희를 필라 회장으로</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">에브리데이 쇼츠</strong>
+                    <strong class="price">69,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes2.webp" alt="<한소희 착용> 마이티셔츠 여성 오버핏">
+                        <img src="image/short2.webp" alt="&lt;우즈착용&gt; 에브리데이 쇼츠">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">&lt;우즈착용&gt; 에브리데이 쇼츠</strong>
+                    <strong class="price">69,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes3.webp" alt="<아일릿 착용> 마이티셔츠 여성 스탠다드">
+                        <img src="image/short3.webp" alt="에브리데이 쇼츠">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">에브리데이 쇼츠</strong>
+                    <strong class="price">69,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes4.webp" alt="마이티셔츠 유니 세미오버핏">
+                        <img src="image/short4.webp" alt="에브리데이 쇼츠">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 유니 세미오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">에브리데이 쇼츠</strong>
+                    <strong class="price">69,900원</strong>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <div class="image_container">
-                        <img src="image/clothes5.webp" alt="마이티셔츠 여성 오버핏">
+                        <img src="image/short5.webp" alt="에브리데이 쇼츠">
                     </div>
                     <span class="tag">공용</span>
-                    <strong class="title">마이티셔츠 여성 오버핏</strong>
-                    <strong class="price">49,900원</strong>
+                    <strong class="title">에브리데이 쇼츠</strong>
+                    <strong class="price">69,900원</strong>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/ap1.webp" alt="휠라 에샤페 실버문">
+                    </div>
+                    <span class="tag">공용ㅣ라이프스타일</span>
+                    <strong class="title">휠라 에샤페 실버문</strong>
+                    <strong class="price">119,000원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/ap2.webp" alt="&lt;차정원 착용&gt; 휠라 에샤페v2 실버">
+                    </div>
+                    <span class="tag">공용ㅣ라이프스타일</span>
+                    <strong class="title">&lt;차정원 착용&gt; 휠라 에샤페v2 실버</strong>
+                    <strong class="price">119,000원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/ap3.webp" alt="&lt;김나영 착용&gt; 휠라 에샤페LX 블루">
+                    </div>
+                    <span class="tag">공용ㅣ라이프스타일</span>
+                    <strong class="title">&lt;김나영 착용&gt; 휠라 에샤페LX 블루</strong>
+                    <strong class="price">119,000원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/ap4.webp" alt="&lt;한소희 착용&gt; 휠라 에샤페LX 크림">
+                    </div>
+                    <span class="tag">공용ㅣ라이프스타일</span>
+                    <strong class="title">&lt;한소희 착용&gt; 휠라 에샤페LX 크림</strong>
+                    <strong class="price">119,000원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/ap5.webp" alt="&lt;한소희 착용&gt; 휠라 에샤페LX 초코">
+                    </div>
+                    <span class="tag">공용ㅣ라이프스타일</span>
+                    <strong class="title">&lt;한소희 착용&gt; 휠라 에샤페LX 초코</strong>
+                    <strong class="price">119,000원</strong>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/cool1.webp" alt="Coldwave에션셜 기능성 반팔티">
+                    </div>
+                    <span class="tag">공용</span>
+                    <strong class="title">Coldwave에션셜 기능성 반팔티</strong>
+                    <strong class="price">39,900원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/cool2.webp" alt="Coldwave에션셜 기능성 반팔티">
+                    </div>
+                    <span class="tag">공용</span>
+                    <strong class="title">Coldwave에션셜 기능성 반팔티</strong>
+                    <strong class="price">39,900원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/cool3.webp" alt="여성 Coldwave에션셜 기능성 반팔티">
+                    </div>
+                    <span class="tag">여성</span>
+                    <strong class="title">여성 Coldwave에션셜 기능성 반팔티</strong>
+                    <strong class="price">39,900원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/cool4.webp" alt="Coldwave에센셜 소로나 반팔티">
+                    </div>
+                    <span class="tag">공용</span>
+                    <strong class="title">Coldwave에센셜 소로나 반팔티</strong>
+                    <strong class="price">39,900원</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="image_container">
+                        <img src="image/cool5.webp" alt="Coldwave에센셜 소로나 반팔티">
+                    </div>
+                    <span class="tag">공용</span>
+                    <strong class="title">Coldwave에센셜 소로나 반팔티</strong>
+                    <strong class="price">39,900원</strong>
                 </a>
             </li>
         </ul>
@@ -534,20 +622,33 @@
 
     <section class="information3_section">
         <h2>Shop the Look</h2>
-        <button type="button" class="arrow_button rounded">
-            <span>더보기</span>
-            <i class="fa-solid fa-caret-right"></i>
-        </button>
-        <ul class="slide_container">
-            <li role="button"><img src="image/s1.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s2.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s3.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s4.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s5.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s6.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s7.webp" alt="이미지"></li>
-            <li role="button"><img src="image/s8.webp" alt="이미지"></li>
-        </ul>
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <button type="button" class="arrow_button rounded">
+                <span>더보기</span>
+                <i class="fa-solid fa-caret-right"></i>
+            </button>
+        </div>
+        <div class="slide_wrapper">
+            <ul class="slide_container">
+                <li role="button"><img src="image/s1.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s2.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s3.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s4.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s5.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s6.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s7.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s8.webp" alt="이미지"></li>
+                <!-- Clone for infinite loop -->
+                <li role="button"><img src="image/s1.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s2.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s3.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s4.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s5.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s6.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s7.webp" alt="이미지"></li>
+                <li role="button"><img src="image/s8.webp" alt="이미지"></li>
+            </ul>
+        </div>
     </section>
 
 
@@ -749,5 +850,130 @@
     </div>
 
 </footer>
+
+<!-- 장바구니 사이드바 -->
+<div class="cart-sidebar-overlay"></div>
+<aside class="cart-sidebar">
+    <main class="cart-panel" aria-label="장바구니">
+        <header class="panel-header">
+            <h1>장바구니</h1>
+            <button class="close" type="button" aria-label="닫기">×</button>
+        </header>
+
+        <section class="tabs" aria-label="배송 유형">
+            <button class="active" type="button">일반배송 <span>1</span></button>
+            <button type="button">오늘도착</button>
+            <button type="button">예약구매</button>
+            <button type="button">커스텀 오더</button>
+        </section>
+
+        <section class="cart-top">
+            <label class="checkline">
+                <input type="checkbox" checked />
+                <span>담긴 상품&nbsp; <strong>1개</strong></span>
+            </label>
+            <div class="text-actions">
+                <button type="button">선택 삭제</button>
+                <button type="button">품절 삭제</button>
+            </div>
+        </section>
+
+        <section class="product">
+            <label class="product-check" aria-label="상품 선택">
+                <input type="checkbox" checked />
+            </label>
+
+            <figure class="product-img">
+                <img
+                        src="https://www.fila.co.kr/cdn/shop/files/01_c86ffe46-c2bd-4751-9134-0983194f3ed4.jpg?v=1770102559&width=533"
+                        alt="에샤페 벨크로 메리제인"
+                />
+            </figure>
+
+            <div class="product-info">
+                <div class="name-row">
+                    <h2>에샤페 벨크로 메리제인</h2>
+                    <button type="button">옵션변경</button>
+                </div>
+                <p>Grey / Grey / Grey, 220</p>
+                <strong>99,000원</strong>
+            </div>
+
+            <button class="remove" type="button" aria-label="삭제">×</button>
+
+            <div class="qty" aria-label="수량">
+                <button id="minus" type="button" aria-label="수량 감소">−</button>
+                <span id="qty">1</span>
+                <button id="plus" type="button" aria-label="수량 증가">＋</button>
+            </div>
+        </section>
+
+        <section class="totals" aria-label="금액 정보">
+            <dl>
+                <div>
+                    <dt>총 상품금액</dt>
+                    <dd id="productTotal">99,000원</dd>
+                </div>
+                <div>
+                    <dt>상품 할인금액</dt>
+                    <dd class="red" id="discountTotal">-0원</dd>
+                </div>
+                <div>
+                    <dt>배송비</dt>
+                    <dd>0원</dd>
+                </div>
+            </dl>
+            <div class="final-total">
+                <span>총 결제금액</span>
+                <strong id="orderTotal">99,000원</strong>
+            </div>
+        </section>
+
+        <section class="recommend">
+            <h2>같이 담으면 좋은 상품</h2>
+            <div class="recommend-list">
+                <article>
+                    <figure class="rec-img">
+                        <img src="image/clothes1.webp" alt="벨로 소프트 팬티">
+                    </figure>
+                    <h3>&lt;우즈 착용&gt; 마이티셔츠 유니 세미오버핏</h3>
+                    <p>49,900원</p>
+                </article>
+                <article>
+                    <figure class="rec-img">
+                        <img src="image/clothes2.webp" alt="러버스 베이직 팬티">
+                    </figure>
+                    <h3>&lt;한소희 착용&gt; 마이티셔츠 여성 오버핏</h3>
+                    <p>49,900원</p>
+                </article>
+                <article>
+                    <figure class="rec-img">
+                        <img src="image/clothes3.webp" alt="벨로 소프트 팬티">
+                    </figure>
+                    <h3>&lt;아일릿 착용&gt; 마이티셔츠 여성 스탠다드</h3>
+                    <p>49,900원</p>
+                </article>
+                <article>
+                    <figure class="rec-img">
+                        <img src="image/clothes4.webp" alt="벨로 소프트 팬티">
+                    </figure>
+                    <h3>마이티셔츠 유니 세미오버핏</h3>
+                    <p>49,900원</p>
+                </article>
+                <article>
+                    <figure class="rec-img">
+                        <img src="image/clothes5.webp" alt="리니어 블랙밴드 드로즈 5PACK">
+                    </figure>
+                    <h3>마이티셔츠 여성 오버핏</h3>
+                    <p>49,900원</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="checkout-bar">
+        <button type="button" id="checkout">총 1개 상품 결제하기</button>
+    </footer>
+</aside>
 </body>
 </html>

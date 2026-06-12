@@ -11,6 +11,12 @@
     --index-content-gap: 32px;
     --index-card-gap: 16px;
 }
+
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
 /* border 가 있는 형태 */
 .arrow_button.border{
     border: 1px solid var(--color-black);
@@ -32,8 +38,6 @@
     z-index: 99;
 }
 .coupon_info_container > button{
-
-/
     position: absolute;
     right: 20px;
     line-height: 30px;
@@ -42,9 +46,11 @@
 }
 /***********************************************************/
 header{
-    position: absolute;
-    width: 100vw;
+    position: fixed;
+    width: 100%;
     top: 30px;
+    left: 0;
+    z-index: 90;
     background-color: grey;
     display: flex;
     justify-content: space-between;
@@ -80,6 +86,7 @@ header > .main_menu > li > a{
     }
 }
 
+
 header > nav > ul{
     display: flex;
 }
@@ -101,17 +108,19 @@ header > nav a{
 
 main > .hero_section{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-color: #000; /* Prevent white flash */
 }
 main > .hero_section > video{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.5s ease; /* Smoother fade */
 }
-main > .hero_section > video.fade{
+main > .hero_section > video.fade,
+main > .hero_section > .hero_image.fade{
     opacity: 0;
 }
 .hero_section .hero_arrow{
@@ -262,7 +271,7 @@ main > .hero_section > video.fade{
 .edit_section{
     position: relative;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     gap: var(--index-content-gap);
     padding: var(--index-section-padding-y) var(--index-section-padding-x);
@@ -428,35 +437,53 @@ main > .hero_section > video.fade{
 }
 
 .information3_section .slide_wrapper{
+    grid-column: 1 / -1;
     overflow: hidden;
+    width: 100%;
 }
 
 .information3_section .slide_container{
-    grid-column: 1 / -1;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    width: max-content;
+    animation: flow 40s linear infinite;
 }
+
+.information3_section .slide_container:hover {
+    animation-play-state: paused;
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .information3_section .slide_container > li{
     flex-basis: 480px;
     flex-shrink: 0;
     cursor: pointer;
+    margin-right: var(--index-card-gap);
+    /* Initial state for appearance effect */
     opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: calc(var(--item-index, 0) * 0.08s);
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: calc(var(--item-index) * 0.1s);
 }
-.information3_section .slide_container > li.is-visible{
+
+.information3_section .slide_container.is-visible > li {
     opacity: 1;
     transform: translateY(0);
 }
-.information3_section .slide_container > li.is-visible:hover{
+
+.information3_section .slide_container > li:hover{
+    /* Override transform when appearing/hovering. 
+       Note: This only works smoothly after the initial animation finishes */
     transform: translateY(-8px);
-}
-.information3_section .slide_container > li:not(:last-child){
-    margin-right: var(--index-card-gap);
+    transition: transform 0.3s ease;
 }
 .information3_section .slide_container > li > img{
     width: 100%;
@@ -483,6 +510,8 @@ main .image_section1{
 }
 main .image_section1 img{
     width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 main .image_section1 img:first-child{
     margin-right: 0;
@@ -633,5 +662,307 @@ footer hr{
 
     footer .site_nav{
         flex-direction: column;
+    }
+}
+
+@media (max-width: 1200px){
+    :root{
+        --index-section-padding-x: 32px;
+        --index-section-padding-y: 72px;
+    }
+
+    header{
+        padding: 8px 28px;
+    }
+
+    .edit_section > h2{
+        font-size: clamp(64px, 14vw, 148px);
+    }
+
+    .edit_section > .label_container a{
+        font-size: clamp(28px, 4vw, 48px);
+    }
+
+    .information1_section .information > h3{
+        font-size: clamp(42px, 6vw, 72px);
+    }
+
+    .information1_section .information > p{
+        font-size: clamp(20px, 3vw, 32px);
+    }
+
+    .information3_section .slide_container > li{
+        flex-basis: 38vw;
+        min-width: 320px;
+    }
+}
+
+@media (max-width: 900px){
+    .coupon_info_container{
+        padding: 0 48px 0 16px;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    header{
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        padding: 8px 20px 12px;
+        background-color: rgba(0, 0, 0, 0.72);
+    }
+
+    header > .home_btn{
+        order: 1;
+    }
+
+    header > nav{
+        order: 2;
+        margin-left: auto;
+    }
+
+    header > .main_menu{
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    header > .main_menu > li{
+        flex: 0 0 auto;
+        padding: 4px 10px;
+    }
+
+    header > .main_menu > li > a,
+    header > nav a{
+        font-size: 15px;
+    }
+
+    main > .hero_section,
+    main > .hero_section > video{
+        width: 100%;
+        min-height: 560px;
+        height: 100svh;
+    }
+
+    .hero_section .hero_arrow{
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero_section .hero_arrow.prev{
+        left: 16px;
+    }
+
+    .hero_section .hero_arrow.next{
+        right: 16px;
+    }
+
+    .trending_section > div{
+        gap: 20px;
+    }
+
+    .trending_section > ul.active{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .edit_section{
+        width: 100%;
+        min-height: auto;
+    }
+
+    .information1_section > div{
+        grid-template-rows: minmax(520px, 60vh);
+    }
+
+    .information2_section .information{
+        font-size: clamp(22px, 4vw, var(--font-headline-lg-size));
+    }
+
+    footer > div{
+        flex-wrap: wrap;
+    }
+
+    footer .site_nav{
+        flex-wrap: wrap;
+    }
+
+    .site_information{
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px){
+    .trending_section > div{
+        align-items: stretch;
+    }
+
+    .trending_section > div > ul{
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .trending_section .arrow_button_container{
+        display: none;
+    }
+
+    .trending_section > ul.active{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trending_section .image_container{
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        background-color: var(--color-surface-container);
+    }
+
+    .trending_section .image_container > img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .edit_section > .image_container{
+        height: min(96vw, 520px);
+    }
+
+    .edit_section img.main{
+        width: 72%;
+    }
+
+    .edit_section img.sub{
+        width: 46%;
+        height: 46%;
+    }
+
+    .edit_section > .label_container{
+        display: block;
+        padding: 24px 0 0;
+    }
+
+    .edit_section > .label_container a{
+        display: inline-block;
+        margin: 0 8px 10px 0;
+        font-size: 28px;
+    }
+
+    .information1_section a{
+        min-height: 460px;
+    }
+
+    .information1_section .information{
+        padding: 24px;
+    }
+
+    .information1_section .information > p{
+        font-size: 18px;
+    }
+
+    .information1_section button{
+        right: 24px;
+        bottom: 24px;
+    }
+
+    .information2_section > div:first-child{
+        min-height: 420px;
+        padding: 32px 20px;
+    }
+
+    .information2_section a{
+        bottom: 32px;
+    }
+
+    .information2_section > div:last-child{
+        min-height: 420px;
+    }
+
+    .information3_section .slide_container{
+        margin-right: calc(var(--index-section-padding-x) * -1);
+        padding-right: var(--index-section-padding-x);
+    }
+
+    .information3_section .slide_container > li{
+        flex-basis: 78vw;
+        min-width: 260px;
+    }
+
+    .paragraph_section p{
+        font-size: 20px;
+    }
+
+    main .image_section1{
+        padding-bottom: 56px;
+    }
+
+    footer{
+        padding: 44px 20px;
+    }
+
+    footer .site_nav,
+    footer .site_nav > div{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    :root{
+        --index-section-padding-x: 16px;
+        --index-section-padding-y: 48px;
+        --index-content-gap: 20px;
+    }
+
+    header > .home_btn > img{
+        width: 44px;
+        height: 44px;
+    }
+
+    header > nav li{
+        padding: 4px 6px;
+    }
+
+    main > .hero_section,
+    main > .hero_section > video{
+        min-height: 520px;
+    }
+
+    .hero_section .hero_pagination{
+        bottom: 20px;
+    }
+
+    .trending_section > h2{
+        font-size: 28px;
+    }
+
+    .trending_section > ul.active{
+        gap: 20px 10px;
+    }
+
+    .trending_section .title,
+    .trending_section .price{
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .information1_section a{
+        min-height: 390px;
+    }
+
+    .information1_section .information > h3,
+    .information3_section h2{
+        font-size: 34px;
+    }
+
+    .information2_section > div:first-child,
+    .information2_section > div:last-child{
+        min-height: 360px;
+    }
+
+    .arrow_button{
+        padding: 8px 24px;
     }
 }

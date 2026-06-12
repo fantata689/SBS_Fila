@@ -42,12 +42,12 @@
 #main{
     display: flex;
     height: 100vh;
-    background-color: lightgray;
+    background-color: white;
 }
 #main > div{
     flex: 1;
     height: 100%;
-    background-color: beige;
+    background-color: #f6f6f6;
     padding: var(--detail-section-padding-x);
 }
 #main > div > img{
@@ -284,17 +284,19 @@
     color: var(--color-secondary);
 }
 /*******************************************/
-#checkpoint,
-#model_cut{
+#checkpoint, #model_cut{
     padding: var(--detail-section-padding-y) var(--detail-section-padding-x);
+    background-color: black;
+    color: white;
 }
 #checkpoint h2,
 #model_cut h2{
     margin-bottom: 28px;
 }
 #model_cut p{
+    font-size: 20px;
     margin-bottom: var(--detail-content-gap);
-    color: var(--color-secondary);
+    color: white;
 }
 #checkpoint > div,
 #model_cut > div{
@@ -303,7 +305,7 @@
 }
 #checkpoint .card{
     flex: 1;
-    min-width: 0;
+    min-width: 0
 }
 #checkpoint .card .image_container{
     aspect-ratio: 1 / 1;
