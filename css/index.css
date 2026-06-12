@@ -565,9 +565,16 @@ footer .sns_nav a{
     justify-content: center;
     width: 32px;
     height: 32px;
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
     text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+footer .sns_nav a:hover {
+    background-color: white;
     color: black;
 }
 
