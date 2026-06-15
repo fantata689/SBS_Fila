@@ -1,0 +1,83 @@
+/* 장바구니 사이드 패널 스타일 */
+.cart-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-sidebar-overlay.is-visible {
+    display: block;
+    opacity: 1;
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-sidebar.is-visible {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* 사이드바 내부 스크롤 영역 */
+.cart-sidebar .cart-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 0; /* 헤더가 상단에 붙도록 조정 */
+}
+
+/* 사이드바 내부 헤더 고정 및 스타일 */
+.cart-sidebar .panel-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    margin-bottom: 0;
+    padding: 30px clamp(18px, 5vw, 38px) 20px;
+    border-bottom: 1px solid var(--line, #e4e4e4);
+}
+
+/* 헤더 아래 컨텐츠 패딩 추가 */
+.cart-sidebar .tabs {
+    padding-top: 26px;
+}
+
+/* 사이드바 내부 고정 하단 바 */
+.cart-sidebar .checkout-bar {
+    position: static; /* flex 아이템으로 배치 */
+    width: 100%;
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .cart-sidebar {
+        width: 60%;
+    }
+}
+
+@media (max-width: 640px) {
+    .cart-sidebar {
+        width: 90%;
+    }
+}
