@@ -109,13 +109,13 @@ header > nav a{
 main > .hero_section{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 101px); /* 헤더 높이(101px)를 제외한 높이로 조정 */
     overflow: hidden;
     background-color: #000; /* Prevent white flash */
 }
 main > .hero_section > video{
     width: 100%;
-    height: 100vh;
+    height: 100%; /* 부모 컨테이너(hero_section)의 높이에 맞춤 */
     object-fit: cover;
     transition: opacity 0.5s ease; /* Smoother fade */
 }

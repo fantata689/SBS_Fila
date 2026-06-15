@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fila 공식 온라인 스토어</title>
+    
+    <!-- SEO 및 메타 태그 -->
+    <title>Fila 공식 온라인 스토어 | 스타일과 퍼포먼스의 조화</title>
+    <meta name="description" content="휠라(FILA) 공식 온라인 스토어에서 최신 테니스, 러닝, 라이프스타일 웨어와 슈즈를 만나보세요.">
+    <meta name="keywords" content="휠라, FILA, 운동화, 에샤페, 테니스화, 스포츠웨어, 바람막이, 반팔티">
+    <meta name="author" content="FILA Korea">
+    
+    <!-- Open Graph (소셜 공유 최적화) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fila 공식 온라인 스토어">
+    <meta property="og:description" content="휠라의 헤리티지와 최신 컬렉션을 온라인 스토어에서 확인하세요.">
+    <meta property="og:image" content="https://www.fila.co.kr/cdn/shop/files/og-image.jpg">
+    <meta property="og:url" content="https://www.fila.co.kr">
 
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/index.css">
@@ -26,119 +36,121 @@
 <body>
 <div class="coupon_info_container">
     <span>친구 추가 시 100% 무료 !! 대박 세일!</span>
-    <button type="button">
+    <button type="button" aria-label="쿠폰 안내 닫기">
         <i class="fa-solid fa-xmark"></i>
     </button>
 </div>
 
 <header style="background-color: white">
-    <a class="home_btn" href="#">
-        <img src="../../image/logo/header-logo.webp" alt="헤더로고">
+    <a class="home_btn" href="index.html" aria-label="휠라 홈으로 이동">
+        <img src="../../image/logo/header-logo.webp" alt="휠라 로고">
     </a>
 
 
-    <ul class="main_menu">
-        <li>
-            <a href="#">Women</a>
-            <div class="sub_menu_container">
-                <div>
-                    <b class="sub_menu_title">
-                        <a href="#">의류</a>
-                    </b>
-                    <ul class="sub_menu">
-                        <li>
-                            <a href="/SBS_Fila/html/product/list.html">전체보기</a>
-                            <a href="/">반팔</a>
-                            <a href="#">바람막이/집업</a>
-                            <a href="#">맨투맨/후디</a>
-                            <a href="#">긴팔</a>
-                            <a href="#">쇼츠</a>
-                            <a href="#">팬츠</a>
-                        </li>
-                    </ul>
+    <nav class="main_navigation" aria-label="주 메뉴">
+        <ul class="main_menu">
+            <li> 
+                <a href="#">Women</a>
+                <div class="sub_menu_container">
+                    <div>
+                        <b class="sub_menu_title">
+                            <a href="#">의류</a>
+                        </b>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="/SBS_Fila-master/html/product/list.html">전체보기</a>
+                                <a href="/">반팔</a>
+                                <a href="#">바람막이/집업</a>
+                                <a href="#">맨투맨/후디</a>
+                                <a href="#">긴팔</a>
+                                <a href="#">쇼츠</a>
+                                <a href="#">팬츠</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sub_menu_title"><a href="#">신발</a></b>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">전체보기</a>
+                                <a href="#">라이프스타일</a>
+                                <a href="#">테니스</a>
+                                <a href="#">러닝</a>
+                                <a href="#">샌들/슬리퍼</a>
+                                <a href="#">에샤페</a>
+                                <a href="#">리트모</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sub_menu_title"><a href="#">용품</a></b>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">전체보기</a>
+                                <a href="#">테니스</a>
+                                <a href="#">피클볼</a>
+                                <a href="#">백팩</a>
+                                <a href="#">숄더/토트백</a>
+                                <a href="#">메신저/크로스백</a>
+                                <a href="#">짐백</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sub_menu_title"><a href="#">언더웨어</a></b>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">전체보기</a>
+                                <a href="#">BEST</a>
+                                <a href="#">컬렉션</a>
+                                <a href="#">쿨웨이브</a>
+                                <a href="#">최화정's 버터소프트</a>
+                                <a href="#">파자마</a>
+                                <a href="#">이지웨어</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sub_menu_title"><a href="#">스포츠</a></b>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">전체보기</a>
+                                <a href="#">테니스</a>
+                                <a href="#">러닝</a>
+                                <a href="#">트레이닝</a>
+                                <a href="#">피트니스</a>
+                                <a href="#">피클볼</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <b class="sub_menu_title"><a href="#">신발</a></b>
-                    <ul class="sub_menu">
-                        <li>
-                            <a href="#">전체보기</a>
-                            <a href="#">라이프스타일</a>
-                            <a href="#">테니스</a>
-                            <a href="#">러닝</a>
-                            <a href="#">샌들/슬리퍼</a>
-                            <a href="#">에샤페</a>
-                            <a href="#">리트모</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <b class="sub_menu_title"><a href="#">용품</a></b>
-                    <ul class="sub_menu">
-                        <li>
-                            <a href="#">전체보기</a>
-                            <a href="#">테니스</a>
-                            <a href="#">피클볼</a>
-                            <a href="#">백팩</a>
-                            <a href="#">숄더/토트백</a>
-                            <a href="#">메신저/크로스백</a>
-                            <a href="#">짐백</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <b class="sub_menu_title"><a href="#">언더웨어</a></b>
-                    <ul class="sub_menu">
-                        <li>
-                            <a href="#">전체보기</a>
-                            <a href="#">BEST</a>
-                            <a href="#">컬렉션</a>
-                            <a href="#">쿨웨이브</a>
-                            <a href="#">최화정's 버터소프트</a>
-                            <a href="#">파자마</a>
-                            <a href="#">이지웨어</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <b class="sub_menu_title"><a href="#">스포츠</a></b>
-                    <ul class="sub_menu">
-                        <li>
-                            <a href="#">전체보기</a>
-                            <a href="#">테니스</a>
-                            <a href="#">러닝</a>
-                            <a href="#">트레이닝</a>
-                            <a href="#">피트니스</a>
-                            <a href="#">피클볼</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Kids</a></li>
-        <li><a href="#">Tennis</a></li>
-        <li><a href="#">F.H.S</a></li>
-    </ul>
+            </li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Tennis</a></li>
+            <li><a href="#">F.H.S</a></li>
+        </ul>
+    </nav>
 
-    <nav>
+    <nav class="user_navigation" aria-label="사용자 메뉴">
         <ul>
             <li>
-                <a href="#">
+                <a href="#" aria-label="매장 찾기">
                     <i class="fa-solid fa-map-location-dot"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" aria-label="검색">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" aria-label="마이페이지">
                     <i class="fa-regular fa-user"></i>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="#" aria-label="장바구니 보기">
                     <i class="fa-solid fa-bag-shopping"></i>
                 </a>
             </li>
@@ -146,7 +158,7 @@
     </nav>
 </header>
 
-<main>
+<main style="padding-top: 101px;">
     <section class="hero_section">
         <video playsinline="true" autoplay="autoplay" muted="muted" preload="metadata" poster="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"><source src="//www.fila.co.kr/cdn/shop/videos/c/vp/40ed1433d6f740edae9171f7a3066c3a/40ed1433d6f740edae9171f7a3066c3a.HD-1080p-7.2Mbps-83835070.mp4?v=0" type="video/mp4"><img src="//www.fila.co.kr/cdn/shop/files/preview_images/40ed1433d6f740edae9171f7a3066c3a.thumbnail.0000000000_1100x.jpg?v=1778488149"></video>
         <img class="hero_image" src="" alt="Hero Image" style="display: none; width: 100%; height: 100vh; object-fit: cover; transition: opacity 0.5s ease;">
